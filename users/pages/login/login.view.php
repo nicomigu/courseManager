@@ -1,4 +1,4 @@
-<?php include_once "../../header.php"; ?>
+<?php include_once "../../../header.php"; ?>
 
 <div class="hero min-h-screen bg-base-200">
 
@@ -26,8 +26,8 @@
           <button type="submit" style="color:white;background-color: #570DF8;" class="btn btn-primary">Login</button>
         </div>
       </div>
-</form>
+    </form>
   </div>
 </div>
 
-<?php include_once "../../footer.php"; ?>
+<?php include_once "../../../footer.php"; ?>

@@ -42,18 +42,22 @@ if (isset($_SESSION['user_id'])) {
                         <input type="hidden" name="id" value="<?= $course->id ?>">
                         <button>Delete</button>
                     </form>
-
-                    <!-- Update Button Form  -->
-                    <form style="display: none;" id="updateForm" action="updateCourse.php" method="post">
-                        <input type="hidden" name="courseName" value="<?= $course->courseTitle ?>">
-                        <button id="updateButton">Update</button>
+                    <form style="display: inline" action="update.php?id=<?= $course->id ?>" method="post">
+                        <input type="hidden" name="id" value="<?= $course->id ?>">
+                        <button>Update</button>
                     </form>
+
+
                 </div>
 
 
 
             <?php endforeach; ?>
-
+            <!-- Update Button Form  -->
+            <form style="display: none;" id="updateForm" action="updateCourse.php" method="post">
+                <input type="hidden" name="courseName" value="<?= $course->courseTitle ?>">
+                <button id="updateButton">Update</button>
+            </form>
         </ul>
     </div>
     <script>

@@ -37,10 +37,10 @@ class CourseRepository extends Repository
     return false;
   }
 
-  public function updateCourse(string $id, string $courseTitle, string $completed): bool
+  public function updateCourse(int $id, string $courseTitle, int $completed): bool
   {
     $sqlStatement = $this->mysqlConnection->prepare("UPDATE courses SET courseTitle=?, completed=? where id = ?");
-    $sqlStatement->bind_param('ssi', $courseTitle, $completed, $id);
+    $sqlStatement->bind_param('sii', $courseTitle, $completed, $id);
     return $sqlStatement->execute();
   }
 

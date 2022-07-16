@@ -12,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $userId = $_SESSION['user_id'];
   $course = (new CourseRepository())->getCourseById(intval($id));
   $newStatus = !$course->completed;
-  $updatedCourse = (new CourseRepository())->updateCourse($course->courseTitle, $newStatus, $course->id);
+  //var_dump($newStatus);
+  $updatedCourse = (new CourseRepository())->updateCourse($course->id, $course->courseTitle, intval($newStatus));
   if ($updatedCourse) {
     header('Location: courses.php');
   } else {
